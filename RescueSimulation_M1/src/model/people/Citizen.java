@@ -5,7 +5,7 @@ import simulation.Rescuable;
 import simulation.Simulatable;
 import model.disasters.Disaster;
 import model.events.SOSListener;
-import model.units.WorldListener;
+import model.events.WorldListener;
 
 public class Citizen implements Rescuable, Simulatable {
 	private SOSListener emergencyService;

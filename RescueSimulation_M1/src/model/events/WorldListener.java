@@ -1,4 +1,4 @@
-package model.units;
+package model.events;
 
 import simulation.Simulatable;
 

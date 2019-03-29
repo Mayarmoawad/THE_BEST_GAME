@@ -11,6 +11,7 @@ import model.disasters.GasLeak;
 import model.disasters.Infection;
 import model.disasters.Injury;
 import model.events.SOSListener;
+import model.events.WorldListener;
 import model.infrastructure.ResidentialBuilding;
 import model.people.Citizen;
 import model.people.CitizenState;
@@ -21,7 +22,6 @@ import model.units.FireTruck;
 import model.units.GasControlUnit;
 import model.units.Unit;
 import model.units.UnitState;
-import model.units.WorldListener;
 
 public class Simulator implements WorldListener {
 	private SOSListener emergencyService;
@@ -90,7 +90,7 @@ public class Simulator implements WorldListener {
 
 			case "EVC":
 				emergencyUnits.add(new Evacuator(id, world[0][0], steps,
-						Integer.parseInt(info[3]), this));
+						this,Integer.parseInt(info[3])));
 				break;
 
 			case "FTK":
@@ -288,7 +288,7 @@ public class Simulator implements WorldListener {
 		return true;
 	}
 
-	public int calculatesCasualties() {
+	public int calculateCasualties() {
 		int counter = 0;
 		for (int i = 0; i < citizens.size(); i++) {
 			if (citizens.get(i).getState() == CitizenState.DECEASED) {

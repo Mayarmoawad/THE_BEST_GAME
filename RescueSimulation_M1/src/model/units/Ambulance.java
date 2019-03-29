@@ -1,5 +1,6 @@
 package model.units;
 
+import model.events.WorldListener;
 import model.people.Citizen;
 import model.people.CitizenState;
 import simulation.Address;
